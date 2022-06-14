@@ -1,27 +1,79 @@
 /* eslint-disable prettier/prettier */
-import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  ViewStyle,
+} from 'react-native';
 import React from 'react';
-import { COLORS, FONTS, SIZES } from '../constants';
+import { COLORS, FONTS, icons, SIZES } from '../constants';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Third';
+type iconType = 'fb' | 'gg';
 
 interface ButtonLoginProps {
   type: ButtonType;
   title: string;
-  icon?: string;
+  icon?: iconType;
   onPress: () => void;
 }
 
-const ButtonLogin = ({ type, title, icon, onPress }: ButtonLoginProps) => {
+const ButtonLogin = ({
+  type = 'Primary',
+  title,
+  icon,
+  onPress,
+}: ButtonLoginProps) => {
   return (
-    <Pressable style={styles.container} onPress={onPress}>
-      {/* {icon && <Image />} */}
-      <Text style={styles.text}>{title}</Text>
-    </Pressable>
+    <TouchableOpacity
+      style={[
+        styles.container,
+        {
+          ...(type === 'Secondary'
+            ? secondaryButtonStyle
+            : type === 'Third'
+            ? thirdButtonStyle
+            : null),
+        },
+      ]}
+      onPress={onPress}>
+      {icon && (
+        <Image
+          source={icon === 'fb' ? icons.fb : icons.gg}
+          style={styles.icon}
+        />
+      )}
+      <Text
+        style={[
+          styles.text,
+          {
+            ...((type === 'Secondary' || type === 'Third') &&
+              textButtonSecondaryStyle),
+          },
+        ]}>
+        {title}
+      </Text>
+    </TouchableOpacity>
   );
 };
 
 export default ButtonLogin;
+
+const secondaryButtonStyle: ViewStyle = {
+  backgroundColor: COLORS.black,
+  borderRadius: SIZES.radius,
+  borderColor: COLORS.white,
+  borderWidth: 0.5,
+};
+
+const thirdButtonStyle: ViewStyle = {
+  backgroundColor: COLORS.black,
+};
+
+const textButtonSecondaryStyle = {
+  color: COLORS.white,
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -32,6 +84,13 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: COLORS.primary,
     borderRadius: SIZES.radius,
+  },
+
+  icon: {
+    width: 28,
+    height: 28,
+    position: 'absolute',
+    left: 20,
   },
 
   text: {
