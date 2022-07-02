@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
+    "start": "react-native start",
+    "start-without-cache": "watchman watch-del-all && rm -f podfile.lock && rm -rf node_modules && yarn && yarn start --reset-cache",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },

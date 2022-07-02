@@ -11,6 +11,9 @@ const COLORS = {
   //   colors
   white: '#FFFFFF',
   black: '#131313',
+
+  gray: '#848484',
+  grayDark: '#525252',
 };
 
 const SIZES = {

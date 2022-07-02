@@ -7,7 +7,7 @@ import {
   ViewStyle,
 } from 'react-native';
 import React from 'react';
-import { COLORS, FONTS, icons, SIZES } from '../constants';
+import { COLORS, FONTS, icons, SIZES } from '../../constants';
 
 type ButtonType = 'Primary' | 'Secondary' | 'Third';
 type iconType = 'fb' | 'gg';
