@@ -25,6 +25,8 @@ const ButtonLogin = ({
   type = 'Primary',
   title,
   icon,
+  width,
+  backgroundColor,
   onPress,
 }: ButtonLoginProps) => {
   return (
@@ -37,6 +39,8 @@ const ButtonLogin = ({
             : type === 'Third'
             ? thirdButtonStyle
             : null),
+          width,
+          backgroundColor,
         },
       ]}
       onPress={onPress}>

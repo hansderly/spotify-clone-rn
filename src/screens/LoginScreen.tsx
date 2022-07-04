@@ -2,7 +2,7 @@
 import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 
-import { InputLogin } from '../components';
+import { ButtonLogin, InputLogin } from '../components';
 import { COLORS, FONTS } from '../constants';
 
 const LoginScreen = () => {
@@ -15,6 +15,15 @@ const LoginScreen = () => {
       <View style={styles.groupInput}>
         <Text style={styles.inputTitle}>Password</Text>
         <InputLogin type="password" />
+      </View>
+      <View style={styles.button}>
+        <ButtonLogin
+          type="Primary"
+          title="Log In"
+          backgroundColor={COLORS.white}
+          width={'40%'}
+          onPress={() => {}}
+        />
       </View>
     </View>
   );
@@ -35,5 +44,9 @@ const styles = StyleSheet.create({
   },
   groupInput: {
     marginVertical: 30,
+  },
+
+  button: {
+    alignItems: 'center',
   },
 });
