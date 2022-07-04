@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+import React, { useState } from 'react';
 import {
   StyleSheet,
   View,
@@ -6,20 +7,33 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import React, { useState } from 'react';
 import { COLORS, icons } from '../../constants';
 
+type InputType = 'email' | 'password';
 interface InputLoginProps {
-  isPassword?: boolean;
+  type: InputType;
 }
 
-const InputLogin = ({ isPassword }: InputLoginProps) => {
-  const [showPassword, setShowPassword] = useState<boolean>(false);
+const InputLogin = ({ type }: InputLoginProps) => {
+  const [showPassword, setShowPassword] = useState<boolean>(true);
+  const [inputTex, setInputText] = useState<string>('');
+
+  const onPressShowPassword = () => {
+    setShowPassword(prevShowPassword => !prevShowPassword);
+  };
+
   return (
     <View style={styles.container}>
-      <TextInput style={styles.inputStyle} />
-      {isPassword && (
-        <TouchableOpacity style={styles.iconContainer}>
+      <TextInput
+        style={styles.inputStyle}
+        value={inputTex}
+        onChangeText={value => setInputText(value)}
+        secureTextEntry={type === 'password' && showPassword}
+      />
+      {type === 'password' && (
+        <TouchableOpacity
+          onPress={onPressShowPassword}
+          style={styles.iconContainer}>
           <Image source={icons.eye} style={styles.icon} />
         </TouchableOpacity>
       )}
@@ -51,7 +65,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   icon: {
-    width: 30,
-    height: 30,
+    width: 25,
+    height: 25,
   },
 });

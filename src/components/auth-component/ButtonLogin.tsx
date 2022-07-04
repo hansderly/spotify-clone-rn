@@ -16,6 +16,8 @@ interface ButtonLoginProps {
   type: ButtonType;
   title: string;
   icon?: iconType;
+  width?: ViewStyle['width'];
+  backgroundColor?: ViewStyle['backgroundColor'];
   onPress: () => void;
 }
 

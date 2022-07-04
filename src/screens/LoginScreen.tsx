@@ -10,11 +10,11 @@ const LoginScreen = () => {
     <View style={styles.container}>
       <View>
         <Text style={styles.inputTitle}>Email or Username</Text>
-        <InputLogin />
+        <InputLogin type="email" />
       </View>
       <View style={styles.groupInput}>
         <Text style={styles.inputTitle}>Password</Text>
-        <InputLogin isPassword={true} />
+        <InputLogin type="password" />
       </View>
     </View>
   );
@@ -25,7 +25,7 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 8,
+    marginHorizontal: 15,
   },
   inputTitle: {
     fontFamily: FONTS.metropolisBold,
