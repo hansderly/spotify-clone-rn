@@ -10,7 +10,7 @@
 
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import { LoginScreen } from './src/screens';
+import { HomeScreen } from './src/screens';
 
 // import {
 //   Colors,
@@ -21,7 +21,7 @@ import { LoginScreen } from './src/screens';
 // } from 'react-native/Libraries/NewAppScreen';
 
 const App = () => {
-  return <LoginScreen />;
+  return <HomeScreen />;
 };
 
 export default App;
