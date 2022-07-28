@@ -7,5 +7,15 @@ const eye = require('../assets/icons/eye.png');
 const notification = require('../assets/icons/notification.png');
 const settings = require('../assets/icons/settings.png');
 const history = require('../assets/icons/history.png');
+const currentListening = require('../assets/icons/currentListening.png');
 
-export default { logoWhite, fb, gg, eye, notification, settings, history };
+export default {
+  logoWhite,
+  fb,
+  gg,
+  eye,
+  notification,
+  settings,
+  history,
+  currentListening,
+};
