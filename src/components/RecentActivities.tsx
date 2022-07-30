@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
-import { COLORS, FONTS, icons, image } from '../constants';
+import { COLORS, FONTS } from '../constants';
 
 type RecentActivitiesProp = {
   imageActivity: string;

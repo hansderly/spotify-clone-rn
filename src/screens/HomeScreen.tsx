@@ -1,12 +1,13 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import { FlatList, StyleSheet, View } from 'react-native';
-import { Header, AlbumCategory, RecentActivities } from '../components';
+import { Header, AlbumCategory } from '../components';
+import { COLORS } from '../constants';
 import data from '../data/home_data';
 
 const HomeScreen = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         ListHeaderComponent={() => <Header />}
         ListHeaderComponentStyle={styles.header}
@@ -25,6 +26,10 @@ const HomeScreen = () => {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.black,
+  },
   header: {
     marginBottom: 10,
   },

@@ -9,6 +9,9 @@ const settings = require('../assets/icons/settings.png');
 const history = require('../assets/icons/history.png');
 const currentListening = require('../assets/icons/currentListening.png');
 
+const option = require('../assets/icons/option.png');
+const like = require('../assets/icons/like.png');
+
 export default {
   logoWhite,
   fb,
@@ -18,4 +21,6 @@ export default {
   settings,
   history,
   currentListening,
+  option,
+  like,
 };

@@ -6,6 +6,7 @@ import RecentActivities from './RecentActivities';
 import Header from './Header';
 import AlbumCover from './AlbumCover';
 import AlbumCategory from './AlbumCategory';
+import MusicItem from './MusicItem';
 
 export {
   ButtonLogin,
@@ -15,4 +16,5 @@ export {
   Header,
   AlbumCover,
   AlbumCategory,
+  MusicItem,
 };
