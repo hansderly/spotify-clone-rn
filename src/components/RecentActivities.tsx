@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     alignItems: 'center',
-    height: 50,
+    height: 55,
     width: 195,
     borderRadius: 5,
     overflow: 'hidden',
@@ -41,12 +41,12 @@ const styles = StyleSheet.create({
   },
   imgContainer: {},
   img: {
-    width: 50,
-    height: 50,
+    width: 55,
+    height: 55,
   },
 
   textContainer: {
-    marginLeft: 10,
+    marginLeft: 8,
   },
 
   text: {

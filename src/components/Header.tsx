@@ -9,6 +9,8 @@ const Header = () => {
   return (
     <View>
       <Head />
+      {/* <ActionRow />
+      <MusicItem /> */}
       <RecentActivitiesCategory />
     </View>
   );

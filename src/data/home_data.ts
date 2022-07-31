@@ -149,4 +149,59 @@ const data: HomepageProps = [
   },
 ];
 
-export default data;
+const album = {
+  id: 1,
+  name: 'Deux Freres',
+  artist: 'PNL',
+  imageCover: image.deuxfreres,
+  releaseDate: '2019',
+  songList: [
+    {
+      id: 1,
+      songTitle: 'Au DD',
+      isExplicit: false,
+    },
+    {
+      id: 2,
+      songTitle: 'Autre monde',
+      isExplicit: true,
+    },
+    {
+      id: 3,
+      songTitle: 'Blanka',
+      isExplicit: true,
+    },
+    {
+      id: 4,
+      songTitle: '91',
+      isExplicit: true,
+    },
+    {
+      id: 5,
+      songTitle: "91's",
+      isExplicit: true,
+    },
+    {
+      id: 6,
+      songTitle: 'Celcius',
+      isExplicit: true,
+    },
+    {
+      id: 7,
+      songTitle: 'Shenmue',
+      isExplicit: true,
+    },
+    {
+      id: 8,
+      songTitle: 'Menace',
+      isExplicit: true,
+    },
+    {
+      id: 9,
+      songTitle: 'Deconnecté',
+      isExplicit: true,
+    },
+  ],
+};
+
+export { data, album };

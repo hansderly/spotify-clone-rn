@@ -7,6 +7,11 @@ import Header from './Header';
 import AlbumCover from './AlbumCover';
 import AlbumCategory from './AlbumCategory';
 import MusicItem from './MusicItem';
+import ActionRow from './ActionRow';
+import AlbumInfo from './AlbumInfo';
+import Artist from './Artist';
+import ImageHeaderAlbumOrPlaylist from './ImageHeaderAlbumOrPlaylist';
+import AlbumHeader from './AlbumHeader';
 
 export {
   ButtonLogin,
@@ -17,4 +22,9 @@ export {
   AlbumCover,
   AlbumCategory,
   MusicItem,
+  ActionRow,
+  AlbumInfo,
+  Artist,
+  ImageHeaderAlbumOrPlaylist,
+  AlbumHeader,
 };

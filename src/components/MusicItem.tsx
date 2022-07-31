@@ -1,20 +1,43 @@
 /* eslint-disable prettier/prettier */
 import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
-import { COLORS, FONTS, image, icons } from '../constants';
+import { COLORS, FONTS, icons } from '../constants';
 
-const MusicItem = () => {
+export interface MusicItemProps {
+  isAlbumScreen: boolean;
+  image?: string;
+  songTitle: string;
+  gotLyrics: boolean;
+  isExplicit: boolean;
+  artistName: string;
+}
+
+const MusicItem = ({
+  isAlbumScreen,
+  image,
+  songTitle,
+  gotLyrics,
+  isExplicit,
+  artistName,
+}: MusicItemProps) => {
   return (
     <View style={styles.container}>
       <View style={styles.infosContainer}>
-        <View style={styles.imgContainer}>
-          <Image source={image.demineur} style={styles.img} />
-        </View>
+        {!isAlbumScreen && (
+          <View style={styles.imgContainer}>
+            <Image source={image} style={styles.img} />
+          </View>
+        )}
         <View style={styles.textContainer}>
-          <Text style={styles.songTitle}>Hurt</Text>
+          <Text style={styles.songTitle}>{songTitle}</Text>
           <View style={styles.isLyricsAndArtistName}>
-            <Text style={styles.isLyrics}>Lyrics</Text>
-            <Text style={styles.artistName}>Johnny Cash</Text>
+            {gotLyrics && <Text style={styles.isLyrics}>Lyrics</Text>}
+            {isExplicit && (
+              <View>
+                <Text style={styles.isExlicit}>E</Text>
+              </View>
+            )}
+            <Text style={styles.artistName}>{artistName}</Text>
           </View>
         </View>
       </View>
@@ -24,7 +47,7 @@ const MusicItem = () => {
           <Image source={icons.like} style={[styles.likeIcon, styles.icon]} />
         </Pressable>
         <Pressable>
-          <Image source={icons.option} style={styles.icon} />
+          <Image source={icons.kebabVertical} style={styles.icon} />
         </Pressable>
       </View>
     </View>
@@ -62,6 +85,8 @@ const styles = StyleSheet.create({
   },
   isLyricsAndArtistName: {
     flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 5,
   },
   isLyrics: {
     backgroundColor: COLORS.gray,
@@ -69,9 +94,17 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     marginRight: 5,
   },
+  isExlicit: {
+    fontSize: 10,
+    backgroundColor: COLORS.gray,
+    paddingHorizontal: 3,
+    borderRadius: 3,
+    marginRight: 5,
+  },
   artistName: {
     fontSize: 15,
-    fontFamily: FONTS.metropolisRegular,
+    fontFamily: FONTS.metropolisMedium,
+    fontWeight: '500',
     color: COLORS.gray,
   },
 
