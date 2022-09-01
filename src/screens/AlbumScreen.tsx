@@ -10,6 +10,7 @@ const AlbumScreen = () => {
   return (
     <View style={styles.container}>
       <FlatList
+        showsVerticalScrollIndicator={false}
         ListHeaderComponent={() => (
           <AlbumHeader
             albumName={album.name}

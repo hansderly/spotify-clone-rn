@@ -43,9 +43,11 @@ const MusicItem = ({
       </View>
 
       <View style={styles.actionConatiner}>
-        <Pressable>
-          <Image source={icons.like} style={[styles.likeIcon, styles.icon]} />
-        </Pressable>
+        {!isAlbumScreen && (
+          <Pressable>
+            <Image source={icons.like} style={[styles.likeIcon, styles.icon]} />
+          </Pressable>
+        )}
         <Pressable>
           <Image source={icons.kebabVertical} style={styles.icon} />
         </Pressable>
