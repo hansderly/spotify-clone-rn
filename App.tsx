@@ -12,6 +12,9 @@ import React from 'react';
 import { SafeAreaView } from 'react-native';
 import { HomeScreen } from './src/screens';
 
+/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
+ * LTI update could not be added via codemod */
+
 // import {
 //   Colors,
 //   DebugInstructions,
